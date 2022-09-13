@@ -617,20 +617,29 @@ class MainWindow(tk.Frame):
             self.__ready_to_continue.set(1)
 
     def __show_help(self):
-        helpfile = str(Path(__file__).parent / "assets" / "manual.md")
-        subprocess.Popen([helpfile], shell=True)
+        helpfile = str(Path(__file__).parent / "assets" / "manual.pdf")
+        if platform.system() in ('Darwin','Linux'):
+            subprocess.Popen(['open',helpfile])
+        else:
+            subprocess.Popen([helpfile], shell=True)
 
     def __show_sheet(self):
         if (self.form_variant == FormVariantSelection.VARIANT_75_Q):
             helpfile = str(
                 Path(__file__).parent / "assets" /
                 "multiple_choice_sheet_75q.pdf")
-            subprocess.Popen([helpfile], shell=True)
+            if platform.system() in ('Darwin','Linux'):
+                subprocess.Popen(['open', helpfile])
+            else:
+                subprocess.Popen([helpfile], shell=True)
         elif (self.form_variant == FormVariantSelection.VARIANT_150_Q):
             helpfile = str(
                 Path(__file__).parent / "assets" /
                 "multiple_choice_sheet_150q.pdf")
-            subprocess.Popen([helpfile], shell=True)
+            if platform.system() in ('Darwin','Linux'):
+                subprocess.Popen(['open', helpfile])
+            else:
+                subprocess.Popen([helpfile], shell=True)
 
     def __on_close(self):
         self.__app.destroy()
