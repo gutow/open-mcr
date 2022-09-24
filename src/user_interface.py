@@ -1,6 +1,5 @@
 import abc
 import enum
-import os.path
 from pathlib import Path
 import subprocess
 import sys
@@ -618,8 +617,7 @@ class MainWindow(tk.Frame):
             self.__ready_to_continue.set(1)
 
     def __show_help(self):
-        helpfile = helpfile = os.path.join(Path(__file__).parent, "assets",
-                "manual.pdf")
+        helpfile = str(Path(__file__).parent / "assets" / "manual.pdf")
         if platform.system() in ('Darwin','Linux'):
             subprocess.Popen(['open',helpfile])
         else:
@@ -627,15 +625,13 @@ class MainWindow(tk.Frame):
 
     def __show_sheet(self):
         if (self.form_variant == FormVariantSelection.VARIANT_75_Q):
-            helpfile = os.path.join(Path(__file__).parent, "assets",
-                "multiple_choice_sheet_75q.pdf")
+            helpfile = str(Path(__file__).parent / "assets" / "multiple_choice_sheet_75q.pdf")
             if platform.system() in ('Darwin','Linux'):
                 subprocess.Popen(['open', helpfile])
             else:
                 subprocess.Popen([helpfile], shell=True)
         elif (self.form_variant == FormVariantSelection.VARIANT_150_Q):
-            helpfile = os.path.join(Path(__file__).parent, "assets",
-                                    "multiple_choice_sheet_150q.pdf")
+            helpfile = str(Path(__file__).parent / "assets" / "multiple_choice_sheet_150q.pdf")
             if platform.system() in ('Darwin','Linux'):
                 subprocess.Popen(['open', helpfile])
             else:
