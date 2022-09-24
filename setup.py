@@ -11,7 +11,9 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Ian Sanders",
-    author_email="iansan5653@github.com",
+    author_email="iansan5653@gmail.com",
+    author="Jonathan Gutow",
+    author_email="gutow@uwosh.edu",
     keywords="omr, optical-mark-recognition, open-educational-resources, " \
              "exam-sheets, exam-scoring",
     license="GPL-3.0+",
