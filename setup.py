@@ -10,10 +10,8 @@ setuptools.setup(
     description="Graphical tool for optical mark recognition for test scoring.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="Ian Sanders",
+    author="Ian Sanders <iansan5653@gmail.com>, Jonathan Gutow <gutow@uwosh.edu>",
     author_email="iansan5653@gmail.com",
-    author="Jonathan Gutow",
-    author_email="gutow@uwosh.edu",
     keywords="omr, optical-mark-recognition, open-educational-resources, " \
              "exam-sheets, exam-scoring",
     license="GPL-3.0+",
